@@ -8,6 +8,8 @@ import {
   removeDeduction,
   calculateSalaries,
 } from "../store/salarySlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SalaryForm = () => {
   const dispatch = useDispatch();
@@ -133,6 +135,11 @@ const SalaryForm = () => {
 
         {deductions.map((deduction, index) => (
           <div key={index}>
+            <FontAwesomeIcon
+              icon={faTimes}
+              style={{ cursor: "pointer", marginRight: "10px" }}
+              onClick={() => handleRemoveDeduction(index)}
+            />
             {deduction.title}: {deduction.amount}
             <button onClick={() => handleRemoveDeduction(index)}>Remove</button>
           </div>
