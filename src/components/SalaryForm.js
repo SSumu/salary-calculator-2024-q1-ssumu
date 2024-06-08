@@ -66,9 +66,8 @@ const SalaryForm = () => {
 
   return (
     <div>
-      <h2>Salary Calculator</h2>
+      <h2>Basic Salary</h2>
       <label>
-        Basic Salary:
         <input
           type="number"
           value={basicSalary}
@@ -78,6 +77,7 @@ const SalaryForm = () => {
 
       <div>
         <h3>Earnings</h3>
+        <p>Allowance, Fixed Allowance, Bonus and etc.</p>
         <input
           type="text"
           name="title"
@@ -93,13 +93,13 @@ const SalaryForm = () => {
           onChange={handleNewEarningChange}
         />
         <label>
-          EPF/ETF:
           <input
             type="checkbox"
             name="epfEtfAllowed"
             checked={newEarning.epfEtfAllowed}
             onChange={handleNewEarningChange}
           />
+          EPF/ETF
         </label>
         <button onClick={handleAddEarning}>Add Earning</button>
 
@@ -114,6 +114,7 @@ const SalaryForm = () => {
 
       <div>
         <h3>Deductions</h3>
+        <p>Salary Advances, Loan Deductions and all</p>
         <input
           type="text"
           name="title"
@@ -139,8 +140,8 @@ const SalaryForm = () => {
       </div>
 
       <div>
-        <h3>Salary Summary</h3>
-        <div>Net Salary: {netSalary}</div>
+        <h3>Your Summary</h3>
+        <div>Net Salary (Take Home) {netSalary}</div>
         <div>Cost To Company: {ctc}</div>
       </div>
     </div>

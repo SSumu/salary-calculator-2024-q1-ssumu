@@ -6,9 +6,9 @@ const SalarySummary = () => {
 
   return (
     <div>
-      <p>Basic Salary: {basicSalary} </p>
+      <p>Basic Salary {basicSalary} </p>
       <p>Net Salary:{netSalary}</p>
-      <p>CTC: {ctc} </p>
+      <p>CTC (Cost to Company) {ctc} </p>
     </div>
   );
 };
