@@ -108,8 +108,12 @@ const SalaryForm = () => {
         {earnings.map((earning, index) => (
           <div key={index}>
             {earning.title}:{earning.amount}
+            <FontAwesomeIcon
+              icon={faTimes}
+              style={{ cursor: "pointer", marginRight: "10px" }}
+              onClick={() => handleRemoveEarning(index)}
+            />
             {earning.epfEtfAllowed && "(EPF/ETF)"}
-            <button onClick={() => handleRemoveEarning(index)}>Remove</button>
           </div>
         ))}
       </div>
@@ -141,7 +145,6 @@ const SalaryForm = () => {
               onClick={() => handleRemoveDeduction(index)}
             />
             {deduction.title}: {deduction.amount}
-            <button onClick={() => handleRemoveDeduction(index)}>Remove</button>
           </div>
         ))}
       </div>
